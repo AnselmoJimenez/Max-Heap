@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef MAXHEAP_H_
+#define MAXHEAP_H_
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -19,7 +22,10 @@ typedef struct {
 } maxheap_t;
 
 // Creates heap and returns a new heap
-maxheap_t *create_heap();
+maxheap_t *createHeap();
+
+// Frees allocated heap
+void destroyHeap(maxheap_t *heap);
 
 // Swaps entries in the heap
 void swap(int *a, int *b);
@@ -47,3 +53,5 @@ void heapSort(int *array, int arraySize);
 
 // Print heap
 void printHeap(maxheap_t *heap);
+
+#endif

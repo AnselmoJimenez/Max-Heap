@@ -1,7 +1,7 @@
 #include "maxheap.h"
 
 // Creates heap and returns a new heap
-maxheap_t *create_heap() {
+maxheap_t *createHeap() {
     //  allocate memory for the heap
     maxheap_t *heap = (maxheap_t *) malloc(sizeof(maxheap_t));
 
@@ -12,6 +12,14 @@ maxheap_t *create_heap() {
     heap->count = 0;
 
     return heap;
+}
+
+// Frees th allocated min heap
+void destroyHeap(maxheap_t *heap) {
+    if (heap == NULL) { return; }
+
+    free(heap);
+    heap = NULL;
 }
 
 // Swaps entries in the heap
